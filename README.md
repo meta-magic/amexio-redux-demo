@@ -28,6 +28,9 @@ Redux is librarby which helps to manage the state of the Application. Redux is a
 - Application testing
 - Easy yo add new features
 - [Great dev tooling](https://chrome.google.com/webstore/detail/redux-devtools/lmhkpmbekcpmknklioeibfkpmmfibljd?hl=en)
+- Single source of truth - The state of your whole application is stored in an object tree within a single store
+- State is read-only - The only way to change the state is to emit an action, an object describing what happened
+- 
 
 ### When to use Redux ?
 - Multiple place having copies of same data
