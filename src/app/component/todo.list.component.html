@@ -1,0 +1,31 @@
+<amexio-card-ce>
+    <amexio-header-ce [align]="'space-between'" [background]="'black'" [color]="'white'">
+        <amexio-label size="medium-bold">Add to do</amexio-label>
+    </amexio-header-ce>
+    <amexio-body-ce>
+        <amexio-layout-columns [border]="false" [orientation]="'vertical'">
+            <amexio-layout-item>
+                <amexio-text-input [(ngModel)]="model.id" field-label="ID" name="id" place-holder="Please enter Id"
+                    icon-feedback="true">
+                </amexio-text-input>
+            </amexio-layout-item>
+            <amexio-layout-item>
+                <amexio-text-input [(ngModel)]="model.description" field-label="Description" name="description"
+                    place-holder="Please enter description" icon-feedback="true">
+                </amexio-text-input>
+            </amexio-layout-item>
+            <amexio-layout-item>
+                <amexio-dropdown [(ngModel)]="model.priority" [place-holder]="'Select priority'" name="priority" [data]="priorties"
+                    [field-label]="'Priority'" [display-field]="'name'" [value-field]="'id'">
+                </amexio-dropdown>
+            </amexio-layout-item>
+            <amexio-layout-item>
+                <amexio-checkbox [field-label]="'Is Completed'" [(ngModel)]="model.isCompleted"></amexio-checkbox>
+            </amexio-layout-item>
+        </amexio-layout-columns>
+    </amexio-body-ce>
+    <amexio-action-ce [border-top]="true">
+        <amexio-button [label]="'Add ToDo'" (onClick)="addToDo()" [type]="'theme-color'" [tooltip]="'toolTip'">
+        </amexio-button>
+    </amexio-action-ce>
+</amexio-card-ce>

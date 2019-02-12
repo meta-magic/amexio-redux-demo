@@ -1,0 +1,32 @@
+<amexio-card-ce>
+    <amexio-header-ce [align]="'space-between'" [background]="'black'" [color]="'white'">
+        <amexio-label size="medium-bold">
+            User ToDo list
+        </amexio-label>
+    </amexio-header-ce>
+    <amexio-body-ce>
+        <ng-container *ngIf="(todos | async).length !=0">
+            <amexio-datagrid [data]="(todos | async)" [page-size]="10">
+                <amexio-data-table-column [data-index]="'id'" [data-type]="'string'" [text]="'ID'"></amexio-data-table-column>
+                <amexio-data-table-column [data-index]="'description'" [data-type]="'string'" [text]="'Description'"></amexio-data-table-column>
+                <amexio-data-table-column [data-index]="'priority'" [data-type]="'string'" [text]="'Priority'">
+                    <ng-template #amexioBodyTmpl let-column let-row="row">
+                        <amexio-label class="fa fa-circle fa-lg" [ngClass]="{'green': row.priority== '1' , 'yellow': row.priority =='2' , 'red' : row.priority=='3'}"></amexio-label>
+                    </ng-template>
+                </amexio-data-table-column>
+                <amexio-data-table-column [data-index]="'isCompleted'" [data-type]="'string'" [text]="'IsCompleted'">
+                    <ng-template #amexioBodyTmpl let-column let-row="row">
+                        <amexio-label *ngIf="(row.isCompleted)">Done</amexio-label>
+                        <amexio-label *ngIf="(!row.isCompleted)">WIP</amexio-label>
+                    </ng-template>
+                </amexio-data-table-column>
+            </amexio-datagrid>
+        </ng-container>
+    </amexio-body-ce>
+    <amexio-action-ce [border-top]="true" [align]="'space-between'">
+        <div>Total count: <b>{{(todos | async).length}}</b> | Last update: <b>{{(lastUpdate | async) | date :
+                'mediumTime'}}</b></div>
+        <amexio-button [label]="'Clear ToDos'" (onClick)="clearToDos()" [type]="'theme-color'" [tooltip]="'toolTip'">
+        </amexio-button>
+    </amexio-action-ce>
+</amexio-card-ce>
