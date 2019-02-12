@@ -54,4 +54,8 @@ Demo Todo application consistof three components
 - Display todo's count priority wise
 
 
+### Thank you!
+
+Chers
+Happy learning :)
 
