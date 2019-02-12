@@ -1,27 +1,37 @@
-# Reduxdemo
+# Redux + Angular + Amexio
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 7.0.5.
+## Redux 
+Redux is librarby which helps to manage the state of the Application. Redux is a predictable state container for JavaScript apps which makes it possible to use a centralized state management in your application.
 
-## Development server
+### Angular without Redux
+SPA is great for building modern web-based applications. However as more and more applications are being transferred into the browser the complexity for managing the state of Application becomes complex.
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+Angular, are using a component-based approach to divide the application into smaller units. But in angular component has a logic which calls the service and set data to localised properties which is eventually used in View Template.
 
-## Code scaffolding
+As a complexity of application start to increase components needs to share the data. This we achive by
+- Defining component tree structure
+- Define shared service
+- OR do event handling
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+Above approach works if you have application with few components, if number of components are more then you application is going to look like Spaghetti :). Some of drawbacks are
+ - You start defining more input/out properties to component. Which makes components more inflexible as it is now dependent of someone else.
+ - If component state is changed it needs to notify other
+ - As there are lot of component dependency, data flow might become unpredicatable
+ - Not easy to state the component
+ - Adding new feature is goining to be time consuming
+ 
+To overcome with above issue we can use Centralized application state management using Redux.
 
-## Build
+### Benifits of using Redux
+- Predicatable application state
+- Decoupled architecture
+- Application testing
+- Easy yo add new features
+- [Great dev tooling](https://chrome.google.com/webstore/detail/redux-devtools/lmhkpmbekcpmknklioeibfkpmmfibljd?hl=en)
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
+### When to use Redux ?
+- Multiple place having copies of same data
+- Multiple view that need to work on same data and should also be in sync
+- Multiple user updating data
+- Multiple actors updating same date
 
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
