@@ -44,6 +44,14 @@ Redux is librarby which helps to manage the state of the Application. Redux is a
 npm install redux @angular-redux/store --save
 
 
+## Todo application 
+
+<img width="1677" alt="screen shot 2019-02-12 at 3 42 47 pm" src="https://user-images.githubusercontent.com/23295769/52628251-4c0bc280-2edd-11e9-99a0-ce3afe936f35.png">
+
+Demo Todo application consistof three components
+- Add todo to store
+- Display all todo's from store
+- Display todo's count priority wise
 
 
 
