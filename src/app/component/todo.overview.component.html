@@ -14,7 +14,7 @@
                         <amexio-label class="fa fa-circle fa-lg" [ngClass]="{'green': row.priority== '1' , 'yellow': row.priority =='2' , 'red' : row.priority=='3'}"></amexio-label>
                     </ng-template>
                 </amexio-data-table-column>
-                <amexio-data-table-column [data-index]="'isCompleted'" [data-type]="'string'" [text]="'IsCompleted'">
+                <amexio-data-table-column [data-index]="'isCompleted'" [data-type]="'string'" [text]="'Is Completed'">
                     <ng-template #amexioBodyTmpl let-column let-row="row">
                         <amexio-label *ngIf="(row.isCompleted)">Done</amexio-label>
                         <amexio-label *ngIf="(!row.isCompleted)">WIP</amexio-label>

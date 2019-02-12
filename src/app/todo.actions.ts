@@ -1,9 +1,18 @@
+import { IAppState } from "./store";
+
 export class ToDoActions {
 
-    constructor(private state, private action){
+    constructor(private state: IAppState, private action){
 
     }
 
+    loadToDo(){
+        return Object.assign({},this.state, {
+            todos: this.state.todos.concat(this.action.todo),
+            lastUpdate: new Date()
+        })
+    }
+    
     addToDo(){
         return Object.assign({},this.state, {
             todos: this.state.todos.concat(Object.assign({},this.action.todo)),

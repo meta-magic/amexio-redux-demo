@@ -7,6 +7,8 @@ import { ToDoOverviewComponent } from './component/todo.overview.component';
 import { ToListComponent } from './component/todo.list.component';
 import { FormsModule } from '@angular/forms';
 import { AmexioWidgetModule } from 'amexio-ng-extensions';
+import { HttpClientModule } from '@angular/common/http';
+import { ToDoService } from './service/todo.service';
 
 @NgModule({
   declarations: [
@@ -18,9 +20,10 @@ import { AmexioWidgetModule } from 'amexio-ng-extensions';
     BrowserModule,
     NgReduxModule,
     FormsModule,
+    HttpClientModule,
     AmexioWidgetModule
   ],
-  providers: [],
+  providers: [ToDoService],
   bootstrap: [AppComponent]
 })
 export class AppModule { 
