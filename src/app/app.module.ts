@@ -1,6 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
-import { NgRedux, NgReduxModule } from '@angular-redux/store';
+import { NgModule, isDevMode } from '@angular/core';
+import { NgRedux, NgReduxModule, DevToolsExtension } from '@angular-redux/store';
 import { AppComponent } from './app.component';
 import { IAppState, rootReducer, INITIAL_STATE } from './store';
 import { ToDoOverviewComponent } from './component/todo.overview.component';
@@ -30,7 +30,11 @@ import { PriorityDashboardComponent } from './component/priority.dashboard.compo
 })
 export class AppModule { 
 
-  constructor(ngRedux: NgRedux<IAppState>){
+  constructor(ngRedux: NgRedux<IAppState>, devTools: DevToolsExtension){
+
+    const enhancer = isDevMode() ? [devTools.enhancer()] : [];
+
+    //ngRedux.configureStore(rootReducer, INITIAL_STATE,[],enhancer);
     ngRedux.configureStore(rootReducer, INITIAL_STATE);
   }
 }
