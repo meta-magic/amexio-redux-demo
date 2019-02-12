@@ -40,4 +40,10 @@ Redux is librarby which helps to manage the state of the Application. Redux is a
 - Actions : Is plain JS object that represent something happend in application
 - Reducer : It is pure function which represent how the of state application changes in reponse to the action. Reducer never modifies the state, instead it returns the new state
 
+### Installing Redux
+npm install redux @angular-redux/store --save
+
+
+
+
 
