@@ -9,12 +9,14 @@ import { FormsModule } from '@angular/forms';
 import { AmexioWidgetModule } from 'amexio-ng-extensions';
 import { HttpClientModule } from '@angular/common/http';
 import { ToDoService } from './service/todo.service';
+import { PriorityDashboardComponent } from './component/priority.dashboard.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     ToDoOverviewComponent,
-    ToListComponent
+    ToListComponent,
+    PriorityDashboardComponent
   ],
   imports: [
     BrowserModule,

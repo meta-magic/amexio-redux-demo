@@ -1,0 +1,11 @@
+<amexio-layout-columns [border]="false" [orientation]="'horizontal'">
+    <amexio-layout-item>
+        <amexio-label> Low : {{(severityStatus | async).low}}</amexio-label>
+    </amexio-layout-item>
+    <amexio-layout-item>
+        <amexio-label> Medium : {{(severityStatus | async).medium}}</amexio-label>
+    </amexio-layout-item>
+    <amexio-layout-item>
+        <amexio-label> High : {{(severityStatus | async).high}}</amexio-label>
+    </amexio-layout-item>
+</amexio-layout-columns>

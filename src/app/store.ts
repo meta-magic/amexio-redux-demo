@@ -4,12 +4,24 @@ import { ToDoActions } from "./todo.actions";
 
 export interface IAppState {
     todos: IToDos[];
-    lastUpdate: Date; 
+    lastUpdate: Date;
+    severityStatus: SeverityState
+}
+
+export interface SeverityState {
+    low: number;
+    medium: number;
+    high: number;
 }
 
 export const INITIAL_STATE: IAppState = { 
     todos: [],
-    lastUpdate: new Date()
+    lastUpdate: new Date(),
+    severityStatus : {
+        low : 0,
+        medium : 0,
+        high : 0,
+    }
 }
 
 export function rootReducer(state: IAppState, action){

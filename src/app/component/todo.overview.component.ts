@@ -14,6 +14,7 @@ export class ToDoOverviewComponent implements OnInit {
 
     @select('lastUpdate') lastUpdate;
 
+
     constructor(private ngRedux : NgRedux<IAppState>, private todoService : ToDoService){
         
     }
